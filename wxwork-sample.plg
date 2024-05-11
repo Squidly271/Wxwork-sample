@@ -1,9 +1,9 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "Wxwork-sample">
+<!ENTITY name      "wxwork-sample">
 <!ENTITY version   "2024.05.11">
 <!ENTITY launch    "Notifications">
-<!ENTITY github    "Squidly271/wxwork-sample">
+<!ENTITY github    "Squidly271/Wxwork-sample">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/plugins/&name;.plg">
 ]>
 
