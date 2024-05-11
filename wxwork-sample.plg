@@ -1,0 +1,34 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "Wxwork-sample">
+<!ENTITY version   "2024.05.11">
+<!ENTITY launch    "Notifications">
+<!ENTITY github    "Squidly271/wxwork-sample">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/plugins/&name;.plg">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.13.0-beta.2.1">
+
+<CHANGES>
+###2024.05.11
+- Sample plugin
+</CHANGES>
+
+
+<!--
+The 'source' file.
+-->
+<FILE Name="/usr/local/emhttp/plugins/dynamix/agents/wxwork.xml">
+<URL>https://raw.githubusercontent.com/Squidly271/Wxwork-sample/main/wxwork.xml</URL>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+rm -f /usr/local/emhttp/plugins/dynamix/agents/wxwork.xml
+rm -f /boot/config/plugins/dynamix/notifications/agents/Wxwork.sh
+</INLINE>
+</FILE> 
+</PLUGIN>
