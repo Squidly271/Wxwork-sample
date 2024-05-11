@@ -3,6 +3,7 @@
 <!ENTITY name      "wxwork-sample">
 <!ENTITY version   "2024.05.11">
 <!ENTITY launch    "Notifications">
+<!ENTITY author    "Not Squid">
 <!ENTITY github    "Squidly271/Wxwork-sample">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/plugins/&name;.plg">
 ]>
