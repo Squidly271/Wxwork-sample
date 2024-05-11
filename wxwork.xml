@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Agent>
   <Name>Wxwork</Name>
-  <Language>zh_CN zh_TW</Language>
   <Variables>
     <Variable Help="企业微信的企业ID" Desc="CropId" Default="企业ID">CropId</Variable>
     <Variable Help="企业微信应用ID" Desc="AgentId" Default="应用ID">AgentId</Variable>
