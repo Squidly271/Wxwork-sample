@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Agent>
+  <Name>Wxwork</Name>
+  <Language>zh_CN zh_TW</Language>
+  <Variables>
+    <Variable Help="企业微信的企业ID" Desc="CropId" Default="企业ID">CropId</Variable>
+    <Variable Help="企业微信应用ID" Desc="AgentId" Default="应用ID">AgentId</Variable>
+    <Variable Help="企业微信应用的Secret" Desc="Secret" Default="应用Secret">Secret</Variable>
+    <Variable Help="企业微信的代理通知url[b]http://xxx.com/[/b]，nginx的反代，主要是为了让出口IP固定" Desc="ProxyUrl" Default="代理地址">ProxyUrl</Variable>
+    <Variable Help="Specify the fields which are included in the title of the notification." Desc="Notification Title" Default="$SUBJECT">TITLE</Variable>
+    <Variable Help="Specify the fields which are included in the message body of the notification." Desc="Notification Message" Default="$DESCRIPTION">MESSAGE</Variable>
+  </Variables>
+  <Script>
+    <![CDATA[
+    #!/bin/bash
+    ############
+    {0}
+    ############
+    # Markdown newline style for message content
+    TITLE=$(echo -e "$SUBJECT")
+    MESSAGE=$(echo -e "$DESCRIPTION")
+    CORP_ID=$(echo -e "$CropId")
+    APP_SECRET=$(echo -e "$Secret")
+    TO_USER="@all"
+    AGENT_ID=$(echo -e "$AgentId")
+  
+    # 获取 access token
+    ACCESS_TOKEN=\$(curl -s -G "$proxy_url/cgi-bin/gettoken" \
+        -d "corpid=\$CORP_ID" \
+        -d "corpsecret=\$APP_SECRET" | jq -r '.access_token')
+  
+    # 发送消息
+    send_message() {
+        local message="[Unraid]->[\$TITLE]\\n\$MESSAGE"
+        curl -s -H "Content-Type: application/json" -X POST \
+            "$ProxyUrl/cgi-bin/message/send?access_token=\$ACCESS_TOKEN" \
+            -d "{
+                \"touser\": \"\$TO_USER\",
+                \"msgtype\": \"text\",
+                \"agentid\": \"\$AGENT_ID\",
+                \"text\": {
+                    \"content\": \"\$message\"
+                },
+                \"safe\":0
+            }"
+    }
+  
+    # 调用发送消息函数
+    send_message
+    ]]>
+  </Script>
+</Agent>
