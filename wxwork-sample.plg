@@ -29,7 +29,8 @@ The 'remove' script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 rm -f /usr/local/emhttp/plugins/dynamix/agents/wxwork.xml
-rm -f /boot/config/plugins/dynamix/notifications/agents/Wxwork.sh
+mkdir -p /boot/config/plugins/dynamix/notifications/agents-disabled
+mv /boot/config/plugins/dynamix/notifications/agents/Wxwork.sh /boot/config/plugins/dynamix/notifications/agents-disabled/
 </INLINE>
 </FILE> 
 </PLUGIN>
