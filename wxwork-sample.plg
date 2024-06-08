@@ -3,16 +3,16 @@
 <!ENTITY name      "wxwork-sample">
 <!ENTITY version   "2024.05.11">
 <!ENTITY launch    "Notifications">
-<!ENTITY author    "Not Squid">
+<!ENTITY author    "Andrew Zawadzki/Alimighty.Yantao">
 <!ENTITY github    "Squidly271/Wxwork-sample">
-<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/plugins/&name;.plg">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/Wxwork-sample/&name;.plg">
 ]>
 
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.13.0-beta.2.1">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.12.999" support="https://forums.unraid.net/topic/167792-%E6%8F%92%E4%BB%B6-%E5%BE%AE%E4%BF%A1%E9%80%9A%E7%9F%A5-plugin-wechat-notifications/">
 
 <CHANGES>
 ###2024.05.11
-- Sample plugin
+- Initial Release
 </CHANGES>
 
 
