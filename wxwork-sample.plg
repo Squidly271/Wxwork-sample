@@ -6,6 +6,7 @@
 <!ENTITY author    "Andrew Zawadzki/Alimighty.Yantao">
 <!ENTITY github    "Squidly271/Wxwork-sample">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
+<!ENTITY sha256 "2097f00e75204609b8838e3f46fe72ae1091d93b15238ef1b1cde74261f96eeb">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.12.999" support="https://forums.unraid.net/topic/167792-%E6%8F%92%E4%BB%B6-%E5%BE%AE%E4%BF%A1%E9%80%9A%E7%9F%A5-plugin-wechat-notifications/">
@@ -21,6 +22,7 @@ The 'source' file.
 -->
 <FILE Name="/usr/local/emhttp/plugins/dynamix/agents/wxwork.xml">
 <URL>https://raw.githubusercontent.com/Squidly271/Wxwork-sample/main/wxwork.xml</URL>
+<SHA256>&sha256;</SHA256>
 </FILE>
 
 <!--
